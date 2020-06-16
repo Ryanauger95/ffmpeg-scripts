@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 CRF=30 
-if [ $# === 1 ]
+if [ $# -eq 2 ]
 then
-	CRF=$1
+	CRF=$2
 fi
-
+echo "CRF USED: $# $CRF"
 ffmpeg -i $1 -vcodec libx264 -crf $CRF compressed-${1}
